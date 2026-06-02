@@ -947,8 +947,8 @@ function updateBar(count){
 
 async function loadCount(showNotification){
   try{
-    const {count,error}=await _sb.from('waitlist').select('*',{count:'exact',head:true});
-    const newCount=(!error&&count>0)?count:null;
+    const {data,error}=await _sb.rpc('get_waitlist_count');
+    const newCount=(!error&&data>0)?data:null;
     if(newCount===null)return;
     const el=document.getElementById('real-count-num');
     document.getElementById('counter-section').style.display='block';
@@ -1002,8 +1002,8 @@ async function joinWaitlist(){
   /* Obtener posición actual */
   let position=1;
   try{
-    const {count}=await _sb.from('waitlist').select('*',{count:'exact',head:true});
-    if(count)position=count;
+    const {data:cnt}=await _sb.rpc('get_waitlist_count');
+    if(cnt)position=cnt;
   }catch(e){}
 
   /* Correo al equipo */
