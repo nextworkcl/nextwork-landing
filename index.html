@@ -977,6 +977,30 @@ const _sb=window.supabase.createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZrZXd4bXJ1dHBqbWRyeHNxZGVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1MjUwMTYsImV4cCI6MjA5NDEwMTAxNn0.Ety8tIitQKW_3hEaH0obDnmewPx2Opx_ZPmUmIP9ZU0'
 );
 
+function validarEmail(email){
+  const partes=email.split('@');
+  if(partes.length!==2)return{ok:false,msg:'El email debe tener un @ (ej: nombre@gmail.com)'};
+  const[local,domain]=partes;
+  if(!local)return{ok:false,msg:'Falta el nombre antes del @'};
+  if(!domain)return{ok:false,msg:'Falta el dominio después del @'};
+  if(!domain.includes('.'))return{ok:false,msg:'Falta el .com o .cl al final'};
+  const tld=domain.split('.').pop();
+  if(tld.length<2)return{ok:false,msg:'El dominio no es válido (ej: .com, .cl)'};
+  const typos={
+    'gmail.com':['gmial.com','gmal.com','gmail.co','gmail.cm','gmai.com','gmeil.com','gmaol.com','gmaill.com','gmali.com'],
+    'outlook.com':['outlok.com','outloo.com','outlook.co','otlook.com','ourlook.com','outllok.com','outlookk.com'],
+    'hotmail.com':['hotmai.com','hotmial.com','hotmail.co','hotmali.com','hotmeil.com','hotmaill.com'],
+    'yahoo.com':['yaho.com','yahho.com','yahoo.co','yahooo.com','yaho.com'],
+    'icloud.com':['iclud.com','icoud.com','icloud.co','iclould.com'],
+  };
+  for(const[correcto,errores]of Object.entries(typos)){
+    if(errores.includes(domain.toLowerCase())){
+      return{ok:false,msg:`¿Quisiste decir ${local}@${correcto}?`};
+    }
+  }
+  return{ok:true};
+}
+
 async function joinWaitlist(){
   const name=document.getElementById('wl-name').value.trim();
   const email=document.getElementById('wl-email').value.trim();
@@ -985,7 +1009,8 @@ async function joinWaitlist(){
   errEl.style.display='none';
 
   if(!name){errEl.textContent='Por favor ingresa tu nombre.';errEl.style.display='block';return;}
-  if(!email||!email.includes('@')){errEl.textContent='Por favor ingresa un email válido.';errEl.style.display='block';return;}
+  const validacion=validarEmail(email);
+  if(!validacion.ok){errEl.textContent=validacion.msg;errEl.style.display='block';return;}
 
   btn.textContent='Registrando...';btn.disabled=true;
 
