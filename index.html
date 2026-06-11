@@ -23,8 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1" integrity="sha384-UQ9Ztz63gzT2JZCuDRkNXV8RP/gXxdPUuM9LKlz2BzqGx9xFYNAK8yAEgbfZHs7P" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS" crossorigin="anonymous"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -689,6 +689,10 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
         <label for="wl-email">Email</label>
         <input type="email" id="wl-email" placeholder="tu@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')joinWaitlist()">
       </div>
+      <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+        <label for="wl-website">Sitio web</label>
+        <input type="text" id="wl-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
       <div class="error-box" id="wl-error"></div>
       <button class="btn-join" id="wl-btn" onclick="joinWaitlist()">Reservar mi lugar<svg class="ico" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
     </div>
@@ -977,6 +981,8 @@ const _sb=window.supabase.createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZrZXd4bXJ1dHBqbWRyeHNxZGVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1MjUwMTYsImV4cCI6MjA5NDEwMTAxNn0.Ety8tIitQKW_3hEaH0obDnmewPx2Opx_ZPmUmIP9ZU0'
 );
 
+const _pageLoadTime=Date.now();
+
 function levenshtein(a,b){
   const m=a.length,n=b.length;
   const dp=Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i===0?j:j===0?i:0));
@@ -1009,7 +1015,15 @@ async function joinWaitlist(){
   const btn=document.getElementById('wl-btn');
   errEl.style.display='none';
 
+  /* Honeypot: los bots llenan este campo invisible — los humanos no */
+  if(document.getElementById('wl-website').value){return;}
+  /* Time-gate: un humano tarda más de 3s desde que carga la página */
+  if(Date.now()-_pageLoadTime<3000){
+    errEl.textContent='Espera un momento e intenta de nuevo.';errEl.style.display='block';return;
+  }
+
   if(!name){errEl.textContent='Por favor ingresa tu nombre.';errEl.style.display='block';return;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){errEl.textContent='Por favor ingresa un email válido.';errEl.style.display='block';return;}
   const validacion=validarEmail(email);
   if(!validacion.ok){errEl.textContent=validacion.msg;errEl.style.display='block';return;}
 
