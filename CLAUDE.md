@@ -62,8 +62,10 @@ Plataforma chilena para conectar fundadores, cofundadores, desarrolladores, crea
 ### Cloudflare
 - **Account ID:** `7157792545d788fd662b97a838f23770`
 - **Email:** `bastycuevas0@gmail.com`
-- **⚠️ API Key expirada:** la key anterior (cfk_...) ya NO es válida (error 10000/9103). Pendiente crear nuevo token con plantilla "Edit Cloudflare Pages". Guardar el token fuera del repo (variable de entorno local), nunca en este archivo.
-- **⚠️ Bug conocido:** Datacenter SCL (Santiago) da 502 en `/pages/assets/upload` al subir archivos nuevos grandes. Workaround: subir desde el Dashboard de Cloudflare con hotspot del celular.
+- **Auth (jun 2026):** API token `claude-deploy-pages` (scope: Cloudflare Pages Edit) guardado como variable de entorno de usuario `CLOUDFLARE_API_TOKEN` en el PC de Pablo — **nunca en el repo**. `CLOUDFLARE_ACCOUNT_ID` también está como variable de entorno.
+- **Deploy plataforma:** `npx wrangler pages deploy . --project-name nextwork --branch main` desde carpeta limpia (solo html/css/js/png — NUNCA desde la carpeta raíz directa, contiene zips y carpetas internas).
+- **Deploy landing:** automático — push a GitHub (`nextworkcl/nextwork-landing`) despliega solo.
+- **Bug SCL:** el 502 del datacenter Santiago no apareció en los deploys de jun 2026 — posiblemente resuelto, pero si reaparece: hotspot del celular o Dashboard.
 
 ### Seguridad (aplicada junio 2026)
 - **`_headers`** en la landing: HSTS, CSP, X-Frame-Options, Permissions-Policy
