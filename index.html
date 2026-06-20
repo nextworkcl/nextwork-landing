@@ -970,22 +970,6 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
 
 </div>
 
-<!-- CONTADOR EN VIVO -->
-<div class="counter-section" id="counter-section" style="display:none">
-  <div class="counter-card">
-    <div class="live-pill"><span class="live-dot"></span>En vivo</div>
-    <span class="real-count-num" id="real-count-num">–</span>
-    <p class="counter-label">personas ya en la lista de espera <strong>🇨🇱</strong></p>
-    <div class="counter-bar-wrap">
-      <div class="counter-bar" id="counter-bar"></div>
-    </div>
-    <div class="counter-bar-labels">
-      <span id="counter-current">0</span>
-      <span id="counter-goal">Meta: 100 personas</span>
-    </div>
-  </div>
-</div>
-
 <!-- QUÉ ES NEXTWORK -->
 <div class="what-section" data-screen-label="Qué es Nextwork">
   <div class="what-inner">
@@ -1013,6 +997,37 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
           <div class="what-card-desc">Muestra en qué trabajas y atrae a las personas correctas.</div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO INTERACTIVO -->
+<div class="demo-section" data-screen-label="Demo">
+  <span class="demo-badge">Beta · Demo interactivo</span>
+  <div class="demo-h">Prueba el match antes de que exista.</div>
+  <p class="demo-sub">Una simulación con perfiles ficticios para que veas cómo funcionará Nextwork. Elige tu lado, responde y descubre tus matches.</p>
+  <div class="demo-card">
+    <div class="demo-top">
+      <span class="demo-step-pill" id="demo-step-pill">Paso 1 de 4</span>
+      <div class="demo-progress"><div class="demo-progress-fill" id="demo-progress-fill" style="width:12%"></div></div>
+      <button class="demo-reset" onclick="demoReset()">Reiniciar</button>
+    </div>
+    <div class="demo-body" id="demo-body"><!-- render por JS --></div>
+  </div>
+</div>
+
+<!-- CONTADOR EN VIVO -->
+<div class="counter-section" id="counter-section" style="display:none">
+  <div class="counter-card">
+    <div class="live-pill"><span class="live-dot"></span>En vivo</div>
+    <span class="real-count-num" id="real-count-num">–</span>
+    <p class="counter-label">personas ya en la lista de espera <strong>🇨🇱</strong></p>
+    <div class="counter-bar-wrap">
+      <div class="counter-bar" id="counter-bar"></div>
+    </div>
+    <div class="counter-bar-labels">
+      <span id="counter-current">0</span>
+      <span id="counter-goal">Meta: 100 personas</span>
     </div>
   </div>
 </div>
@@ -1045,6 +1060,30 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
 
     </div>
     <p class="stats-foot">El equipo correcto casi duplica tus probabilidades de éxito — pero encontrarlo hoy se deja al azar. <strong>Nextwork existe para cambiar eso.</strong></p>
+  </div>
+</div>
+
+<!-- CÓMO FUNCIONA -->
+<div class="how-section" data-screen-label="Cómo funciona">
+  <div class="sec-label">¿Cómo funciona?</div>
+  <div class="sec-title">De la idea al equipo en 3 pasos.</div>
+  <p class="sec-sub">Simple, directo y pensado para que empieces a construir sin fricción.</p>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <h3>Crea tu perfil</h3>
+      <p>Cuéntale a la comunidad quién eres, qué sabes hacer y qué estás buscando.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <h3>Publica o únete</h3>
+      <p>Comparte tu proyecto y atrae talento, o súmate a una idea que te inspire.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <h3>Conecta y construyan</h3>
+      <p>Conversa, encuentra el match perfecto y empiecen a construir juntos.</p>
+    </div>
   </div>
 </div>
 
@@ -1085,45 +1124,6 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
       </ul>
     </div>
 
-  </div>
-</div>
-
-<!-- CÓMO FUNCIONA -->
-<div class="how-section" data-screen-label="Cómo funciona">
-  <div class="sec-label">¿Cómo funciona?</div>
-  <div class="sec-title">De la idea al equipo en 3 pasos.</div>
-  <p class="sec-sub">Simple, directo y pensado para que empieces a construir sin fricción.</p>
-  <div class="how-steps">
-    <div class="how-step">
-      <div class="how-num">1</div>
-      <h3>Crea tu perfil</h3>
-      <p>Cuéntale a la comunidad quién eres, qué sabes hacer y qué estás buscando.</p>
-    </div>
-    <div class="how-step">
-      <div class="how-num">2</div>
-      <h3>Publica o únete</h3>
-      <p>Comparte tu proyecto y atrae talento, o súmate a una idea que te inspire.</p>
-    </div>
-    <div class="how-step">
-      <div class="how-num">3</div>
-      <h3>Conecta y construyan</h3>
-      <p>Conversa, encuentra el match perfecto y empiecen a construir juntos.</p>
-    </div>
-  </div>
-</div>
-
-<!-- DEMO INTERACTIVO -->
-<div class="demo-section" data-screen-label="Demo">
-  <span class="demo-badge">Beta · Demo interactivo</span>
-  <div class="demo-h">Prueba el match antes de que exista.</div>
-  <p class="demo-sub">Una simulación con perfiles ficticios para que veas cómo funcionará Nextwork. Elige tu lado, responde y descubre tus matches.</p>
-  <div class="demo-card">
-    <div class="demo-top">
-      <span class="demo-step-pill" id="demo-step-pill">Paso 1 de 4</span>
-      <div class="demo-progress"><div class="demo-progress-fill" id="demo-progress-fill" style="width:12%"></div></div>
-      <button class="demo-reset" onclick="demoReset()">Reiniciar</button>
-    </div>
-    <div class="demo-body" id="demo-body"><!-- render por JS --></div>
   </div>
 </div>
 
