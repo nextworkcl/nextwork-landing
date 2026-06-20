@@ -607,6 +607,11 @@ input:focus{
 .who-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.5}
 .who-list .ico{width:18px;height:18px;stroke-width:2.6;color:var(--accent-dark);flex-shrink:0;margin-top:1px}
 .who-card.b .who-list .ico{color:var(--dark)}
+.who-problem{font-size:13px;color:var(--text2);line-height:1.55;margin-bottom:.5rem}
+.who-solve{font-size:13.5px;color:var(--text);line-height:1.55;font-weight:600;margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border)}
+.who-problem b,.who-solve b{font-weight:800}
+.who-card.a .who-solve b{color:var(--accent-dark)}
+.who-card.b .who-solve b{color:var(--dark)}
 
 /* ───────── CÓMO FUNCIONA ───────── */
 .how-section{
@@ -1002,6 +1007,50 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
   </div>
 </div>
 
+<!-- PROPUESTA DE VALOR -->
+<div class="who-section" data-screen-label="Qué resolvemos">
+  <div class="sec-label">Nuestra propuesta de valor</div>
+  <div class="sec-title">¿Qué resolvemos para ti?</div>
+  <p class="sec-sub">Según de qué lado estés, esto es lo que Nextwork cambia para ti.</p>
+  <div class="who-grid">
+
+    <div class="who-card a">
+      <div class="who-head">
+        <div class="who-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg></div>
+        <div>
+          <div class="who-eyebrow">Tienes una idea</div>
+          <h3>Buscas equipo</h3>
+        </div>
+      </div>
+      <p class="who-problem"><b>El problema:</b> encontrar al socio correcto es lento, azaroso y arriesgado. Buscar entre conocidos o redes genéricas se puede salir caro.</p>
+      <p class="who-solve"><b>Lo resolvemos:</b> te conectamos con socios compatibles por afinidad real —visión, valores y habilidades complementarias— rápido y con confianza verificada.</p>
+      <ul class="who-list">
+        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Encuentra cofundadores que compartan tu visión</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Suma devs, diseñadores y creativos a tu proyecto</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Publica tu idea y atrae a las personas correctas</li>
+      </ul>
+    </div>
+
+    <div class="who-card b">
+      <div class="who-head">
+        <div class="who-icon"><svg class="ico" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+        <div>
+          <div class="who-eyebrow">Tienes talento</div>
+          <h3>Buscas proyecto</h3>
+        </div>
+      </div>
+      <p class="who-problem"><b>El problema:</b> tu talento se desperdicia en trabajos sin propósito, o no encuentras proyectos donde ser dueño y no solo empleado.</p>
+      <p class="who-solve"><b>Lo resolvemos:</b> te conectamos con proyectos con potencial donde entras como socio, con equity y propósito desde el día uno.</p>
+      <ul class="who-list">
+        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Únete a proyectos con propósito desde el día uno</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Aporta tus skills donde de verdad se necesitan</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Conviértete en socio, no solo en empleado</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
 <!-- DEMO INTERACTIVO -->
 <div class="demo-section" data-screen-label="Demo">
   <span class="demo-badge">Beta · Demo interactivo</span>
@@ -1085,46 +1134,6 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
       <h3>Conecta y construyan</h3>
       <p>Conversa, encuentra el match perfecto y empiecen a construir juntos.</p>
     </div>
-  </div>
-</div>
-
-<!-- PARA QUIÉN ES -->
-<div class="who-section" data-screen-label="Para quién es">
-  <div class="sec-label">¿Para quién es?</div>
-  <div class="sec-title">Dos lados, un mismo lugar.</div>
-  <p class="sec-sub">No importa de qué lado partas — Nextwork conecta a quienes tienen una idea con quienes saben cómo construirla.</p>
-  <div class="who-grid">
-
-    <div class="who-card a">
-      <div class="who-head">
-        <div class="who-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg></div>
-        <div>
-          <div class="who-eyebrow">Tienes una idea</div>
-          <h3>Buscas equipo</h3>
-        </div>
-      </div>
-      <ul class="who-list">
-        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Encuentra cofundadores que compartan tu visión</li>
-        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Suma devs, diseñadores y creativos a tu proyecto</li>
-        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Publica tu idea y atrae a las personas correctas</li>
-      </ul>
-    </div>
-
-    <div class="who-card b">
-      <div class="who-head">
-        <div class="who-icon"><svg class="ico" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
-        <div>
-          <div class="who-eyebrow">Tienes talento</div>
-          <h3>Buscas proyecto</h3>
-        </div>
-      </div>
-      <ul class="who-list">
-        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Únete a proyectos con propósito desde el día uno</li>
-        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Aporta tus skills donde de verdad se necesitan</li>
-        <li><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Conviértete en socio, no solo en empleado</li>
-      </ul>
-    </div>
-
   </div>
 </div>
 
