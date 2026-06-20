@@ -646,6 +646,73 @@ input:focus{
   .how-step p{max-width:none}
 }
 
+/* ───────── EL PROBLEMA (estadísticas) ───────── */
+.stats-section{
+  width:100%;
+  background:var(--dark);
+  padding:clamp(3.5rem,7vw,5.5rem) 1.5rem;
+  position:relative;z-index:1;overflow:hidden;
+}
+.stats-section::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:radial-gradient(rgba(56,220,120,.08) 1px,transparent 1px);
+  background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(circle at 50% 0%,#000,transparent 75%);
+  mask-image:radial-gradient(circle at 50% 0%,#000,transparent 75%);
+}
+.stats-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.stats-label{
+  font-size:11px;font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;color:var(--accent);
+  text-align:center;margin-bottom:1.1rem;
+}
+.stats-title{
+  font-size:clamp(1.9rem,4.2vw,2.8rem);font-weight:900;color:#fff;
+  text-align:center;letter-spacing:-1.4px;line-height:1.1;
+  margin-bottom:.9rem;text-wrap:balance;
+}
+.stats-title .accent{position:relative;white-space:nowrap;isolation:isolate}
+.stats-title .accent::after{
+  content:'';position:absolute;left:-3px;right:-3px;bottom:.08em;
+  height:.3em;background:var(--accent);z-index:-1;
+  border-radius:3px;transform:rotate(-1.2deg);opacity:.95;
+}
+.stats-sub{
+  font-size:15px;color:rgba(255,255,255,.62);text-align:center;
+  max-width:46ch;margin:0 auto 2.8rem;line-height:1.6;
+}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat-card{
+  background:var(--dark2);
+  border:1px solid rgba(56,220,120,.16);
+  border-radius:20px;padding:1.8rem 1.5rem;
+  display:flex;flex-direction:column;
+  transition:transform .22s ease,border-color .22s ease;
+}
+.stat-card:hover{transform:translateY(-4px);border-color:rgba(56,220,120,.4)}
+.stat-big{
+  font-size:3.4rem;font-weight:900;color:var(--accent);
+  line-height:1;letter-spacing:-2px;margin-bottom:.7rem;
+  font-variant-numeric:tabular-nums;
+}
+.stat-desc{font-size:14px;color:rgba(255,255,255,.78);line-height:1.5;margin-bottom:1rem;flex:1}
+.stat-desc strong{color:#fff;font-weight:700}
+.stat-source{
+  font-size:10.5px;color:rgba(255,255,255,.38);
+  line-height:1.4;border-top:1px solid rgba(255,255,255,.1);
+  padding-top:.7rem;
+}
+.stats-foot{
+  text-align:center;font-size:15px;color:rgba(255,255,255,.7);
+  max-width:52ch;margin:2.6rem auto 0;line-height:1.65;
+}
+.stats-foot strong{color:var(--accent);font-weight:700}
+@media(max-width:680px){
+  .stats-grid{grid-template-columns:1fr;gap:12px}
+  .stat-card{padding:1.5rem}
+  .stat-big{font-size:3rem}
+}
+
 /* ───────── FOOTER ───────── */
 footer{
   position:relative;z-index:1;
@@ -812,6 +879,37 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- EL PROBLEMA (estadísticas) -->
+<div class="stats-section" data-screen-label="El problema">
+  <div class="stats-inner">
+    <div class="stats-label">El problema</div>
+    <div class="stats-title">No mueren por malas ideas.<br>Mueren <span class="accent">sin equipo.</span></div>
+    <p class="stats-sub">La mayoría de los proyectos no fracasan por la idea, sino porque a quien la tiene le falta la otra mitad del equipo.</p>
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-big">23%</div>
+        <div class="stat-desc">de las startups que fracasan lo hacen por <strong>no tener el equipo adecuado</strong> — la 3ª causa más común.</div>
+        <div class="stat-source">Fuente: CB Insights, análisis de 483 startups (2023)</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-big">79%</div>
+        <div class="stat-desc">de los fundadores en Latinoamérica reportan <strong>problemas con sus equipos socios</strong>.</div>
+        <div class="stat-source">Fuente: Estudio del Fracaso, Rockstart (2023)</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-big">2×</div>
+        <div class="stat-desc">más probabilidades de éxito tienen los equipos con <strong>habilidades complementarias</strong> (68% vs 38%).</div>
+        <div class="stat-source">Fuente: Kauffman Fellows Research</div>
+      </div>
+
+    </div>
+    <p class="stats-foot">El equipo correcto casi duplica tus probabilidades de éxito — pero encontrarlo hoy se deja al azar. <strong>Nextwork existe para cambiar eso.</strong></p>
   </div>
 </div>
 
