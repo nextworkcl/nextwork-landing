@@ -713,6 +713,141 @@ input:focus{
   .stat-big{font-size:3rem}
 }
 
+/* ───────── DEMO INTERACTIVO ───────── */
+.demo-section{
+  width:100%;max-width:760px;
+  margin:clamp(3.5rem,7vw,5rem) auto 0;
+  padding:0 1.5rem;position:relative;z-index:1;
+}
+.demo-badge{
+  display:block;width:fit-content;margin:0 auto 1.1rem;
+  background:var(--accent);color:var(--dark);
+  font-size:10.5px;font-weight:800;letter-spacing:1.6px;
+  text-transform:uppercase;padding:6px 15px;border-radius:99px;
+}
+.demo-h{
+  font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:900;color:var(--dark);
+  text-align:center;letter-spacing:-1.4px;line-height:1.1;margin-bottom:.8rem;
+  text-wrap:balance;
+}
+.demo-sub{
+  font-size:15px;color:var(--text2);text-align:center;
+  max-width:46ch;margin:0 auto 2.2rem;line-height:1.6;
+}
+.demo-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:24px;box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.demo-top{
+  display:flex;align-items:center;gap:14px;
+  padding:1rem 1.4rem;border-bottom:1px solid var(--border);
+}
+.demo-step-pill{
+  font-size:11px;font-weight:800;color:var(--dark);
+  background:var(--bg2);padding:5px 12px;border-radius:99px;white-space:nowrap;
+}
+.demo-progress{flex:1;height:7px;background:var(--bg2);border-radius:99px;overflow:hidden}
+.demo-progress-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.demo-reset{font-size:12.5px;color:var(--text3);font-weight:600;cursor:pointer;white-space:nowrap;background:none;border:none;font-family:inherit}
+.demo-reset:hover{color:var(--accent-dark)}
+.demo-body{padding:2rem 1.6rem;min-height:300px}
+.demo-lockpill{
+  display:flex;width:fit-content;align-items:center;gap:6px;margin:0 auto 1.3rem;
+  background:var(--bg2);color:var(--text2);font-size:11.5px;font-weight:600;
+  padding:6px 14px;border-radius:99px;
+}
+.demo-q-eyebrow{
+  font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:var(--text3);text-align:center;margin-bottom:.6rem;
+}
+.demo-q-title{
+  font-size:1.4rem;font-weight:900;color:var(--dark);text-align:center;
+  letter-spacing:-.5px;line-height:1.2;margin-bottom:.4rem;
+}
+.demo-q-help{font-size:13.5px;color:var(--text3);text-align:center;margin-bottom:1.6rem}
+.demo-sides{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.demo-side{
+  text-align:left;background:var(--surface2);border:1.5px solid var(--border);
+  border-radius:16px;padding:1.4rem 1.3rem;cursor:pointer;
+  transition:border-color .18s,transform .18s,box-shadow .18s;font-family:inherit;
+}
+.demo-side:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.demo-side-ico{
+  width:44px;height:44px;border-radius:12px;background:var(--dark);
+  display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:1rem;
+}
+.demo-side h4{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:.35rem;letter-spacing:-.3px}
+.demo-side p{font-size:13px;color:var(--text2);line-height:1.5}
+.demo-opts{display:flex;flex-direction:column;gap:11px;max-width:480px;margin:0 auto}
+.demo-opt{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--surface2);border:1.5px solid var(--border);
+  border-radius:13px;padding:15px 18px;cursor:pointer;
+  font-size:15px;font-weight:700;color:var(--dark);font-family:inherit;text-align:left;
+  transition:border-color .18s,background .18s,transform .18s;
+}
+.demo-opt:hover{border-color:var(--accent);background:#fff;transform:translateX(3px)}
+.demo-opt .arr{color:var(--text3);font-size:16px;flex-shrink:0}
+.demo-opt:hover .arr{color:var(--accent-dark)}
+.demo-back{
+  display:block;margin:1.5rem auto 0;background:none;border:none;cursor:pointer;
+  font-size:13.5px;color:var(--text3);font-weight:600;font-family:inherit;
+}
+.demo-back:hover{color:var(--dark)}
+.demo-unlock{text-align:center;max-width:420px;margin:0 auto}
+.demo-unlock-ico{
+  width:60px;height:60px;border-radius:50%;background:var(--dark);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;font-size:26px;
+}
+.demo-unlock h3{font-size:1.5rem;font-weight:900;color:var(--dark);margin-bottom:.5rem;letter-spacing:-.5px}
+.demo-unlock p{font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:1.6rem}
+.demo-input{
+  width:100%;padding:13px 16px;border-radius:13px;border:1.5px solid var(--border);
+  background:var(--surface2);font-family:inherit;font-size:14.5px;font-weight:500;
+  color:var(--text);outline:none;margin-bottom:.8rem;transition:border .2s,box-shadow .2s;
+}
+.demo-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-dim);background:#fff}
+.demo-unlock-btn{
+  width:100%;padding:15px;border-radius:99px;background:var(--dark);color:#fff;
+  border:none;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;
+  transition:background .2s,transform .18s;margin-top:.4rem;
+}
+.demo-unlock-btn:hover{background:var(--dark2);transform:translateY(-2px)}
+.demo-unlock-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.demo-note{font-size:11.5px;color:var(--text3);margin-top:1rem}
+.demo-err{color:#c0322b;font-size:13px;font-weight:600;margin-bottom:.6rem;min-height:1px}
+.demo-results-head{text-align:center;margin-bottom:1.5rem}
+.demo-results-head h3{font-size:1.45rem;font-weight:900;color:var(--dark);letter-spacing:-.5px;margin-bottom:.4rem}
+.demo-results-head p{font-size:13.5px;color:var(--text2)}
+.demo-match{
+  display:flex;align-items:center;gap:14px;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:16px;padding:1rem 1.2rem;margin-bottom:11px;
+}
+.demo-match-av{
+  width:48px;height:48px;border-radius:50%;flex-shrink:0;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;
+}
+.demo-match-info{flex:1;min-width:0}
+.demo-match-name{font-size:15px;font-weight:800;color:var(--dark);letter-spacing:-.2px}
+.demo-match-role{font-size:12.5px;color:var(--text2);margin:1px 0 5px}
+.demo-match-tags{display:flex;gap:5px;flex-wrap:wrap}
+.demo-match-tags span{font-size:10.5px;font-weight:600;color:var(--accent-dark);background:var(--accent-dim);padding:2px 8px;border-radius:99px}
+.demo-match-pct{text-align:center;flex-shrink:0}
+.demo-match-pct b{display:block;font-size:1.3rem;font-weight:900;color:var(--accent-dark);line-height:1}
+.demo-match-pct small{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.demo-results-cta{
+  display:block;width:100%;text-align:center;margin-top:1.3rem;
+  padding:14px;border-radius:99px;background:var(--accent);color:var(--dark);
+  font-size:14.5px;font-weight:800;text-decoration:none;font-family:inherit;border:none;cursor:pointer;
+  transition:background .2s,transform .18s;
+}
+.demo-results-cta:hover{background:#43e884;transform:translateY(-2px)}
+@media(max-width:560px){
+  .demo-sides{grid-template-columns:1fr}
+  .demo-body{padding:1.6rem 1.2rem}
+}
+
 /* ───────── FOOTER ───────── */
 footer{
   position:relative;z-index:1;
@@ -974,6 +1109,21 @@ footer .copy .heart{width:13px;height:13px;fill:var(--accent)}
       <h3>Conecta y construyan</h3>
       <p>Conversa, encuentra el match perfecto y empiecen a construir juntos.</p>
     </div>
+  </div>
+</div>
+
+<!-- DEMO INTERACTIVO -->
+<div class="demo-section" data-screen-label="Demo">
+  <span class="demo-badge">Beta · Demo interactivo</span>
+  <div class="demo-h">Prueba el match antes de que exista.</div>
+  <p class="demo-sub">Una simulación con perfiles ficticios para que veas cómo funcionará Nextwork. Elige tu lado, responde y descubre tus matches.</p>
+  <div class="demo-card">
+    <div class="demo-top">
+      <span class="demo-step-pill" id="demo-step-pill">Paso 1 de 4</span>
+      <div class="demo-progress"><div class="demo-progress-fill" id="demo-progress-fill" style="width:12%"></div></div>
+      <button class="demo-reset" onclick="demoReset()">Reiniciar</button>
+    </div>
+    <div class="demo-body" id="demo-body"><!-- render por JS --></div>
   </div>
 </div>
 
@@ -1279,6 +1429,176 @@ async function joinWaitlist(){
   document.getElementById('counter-section').style.display='block';
   updateBar(position);
 }
+
+/* ── DEMO INTERACTIVO DE MATCHING ── */
+const demoState={stage:'side',side:null,a1:null,a2:null,a3:null};
+
+const demoQ={
+  idea:{
+    q1:{eyebrow:'Pregunta 1 de 3',title:'¿Qué necesitas con más urgencia?',opts:[['Desarrollo / Tech','tech'],['Diseño / Producto','design'],['Negocios / Growth','business']]},
+    q2:{eyebrow:'Pregunta 2 de 3',title:'¿En qué etapa está tu idea?',opts:[['Solo una idea','idea'],['Tengo un prototipo','proto'],['MVP con usuarios','mvp']]},
+    q3:{eyebrow:'Pregunta 3 de 3',title:'¿Qué tipo de vínculo buscas?',opts:[['Cofundador/a','cofounder'],['Socio part-time','parttime'],['Colaborador puntual','collab']]}
+  },
+  talento:{
+    q1:{eyebrow:'Pregunta 1 de 3',title:'¿Cuál es tu fuerte?',opts:[['Desarrollo / Tech','tech'],['Diseño / Producto','design'],['Negocios / Growth','business']]},
+    q2:{eyebrow:'Pregunta 2 de 3',title:'¿Cuánto tiempo puedes dedicar?',opts:[['Full-time','full'],['Part-time','part'],['Por proyecto','project']]},
+    q3:{eyebrow:'Pregunta 3 de 3',title:'¿Qué tipo de vínculo buscas?',opts:[['Cofundador/a','cofounder'],['Socio part-time','parttime'],['Colaborador puntual','collab']]}
+  }
+};
+
+const demoTalentos={
+  tech:[{n:'Matías González',r:'Dev Fullstack · Santiago',i:'MG',c:'#1a3a2a',t:['React','Node.js','AWS'],p:94},{n:'Tomás Ibáñez',r:'Backend Senior · Santiago',i:'TI',c:'#2d6b4a',t:['Python','APIs','Escala'],p:89}],
+  design:[{n:'Felipe Muñoz',r:'Diseñador UX/UI · Valparaíso',i:'FM',c:'#1a6b6b',t:['Figma','Design Systems','Mobile'],p:92},{n:'Javiera Castro',r:'Product Designer · Santiago',i:'JC',c:'#4d9e72',t:['Producto','UX Research','Prototipos'],p:87}],
+  business:[{n:'Isidora Campos',r:'Business Developer · Santiago',i:'IC',c:'#3f6b52',t:['Ventas B2B','GTM','Latam'],p:91},{n:'Camila Rojas',r:'Growth Marketer · Concepción',i:'CR',c:'#2d6b4a',t:['SEO','Paid Ads','Analytics'],p:88}]
+};
+const demoProyectos={
+  tech:[{n:'EcoTrack',r:'ClimateTech · busca CTO',i:'ET',c:'#1a3a2a',t:['Impacto','B2B','Seed'],p:93},{n:'FinazApp',r:'Fintech · busca dev fullstack',i:'FA',c:'#2d6b4a',t:['Fintech','MVP','Equity'],p:88}],
+  design:[{n:'Mentora',r:'EdTech · busca diseñador de producto',i:'ME',c:'#1a6b6b',t:['EdTech','App','Prototipo'],p:90},{n:'Wellnest',r:'HealthTech · busca UX',i:'WN',c:'#4d9e72',t:['Salud','Mobile','Seed'],p:86}],
+  business:[{n:'LogiGo',r:'Logística · busca cofundador comercial',i:'LG',c:'#3f6b52',t:['Logística','B2B','Tracción'],p:92},{n:'Frescat',r:'Foodtech · busca growth lead',i:'FR',c:'#2d6b4a',t:['Foodtech','Marketplace','MVP'],p:87}]
+};
+
+function demoSetProgress(pill,pct){
+  document.getElementById('demo-step-pill').textContent=pill;
+  document.getElementById('demo-progress-fill').style.width=pct+'%';
+}
+
+function demoReset(){
+  demoState.stage='side';demoState.side=null;demoState.a1=null;demoState.a2=null;demoState.a3=null;
+  demoRender();
+}
+function demoPickSide(s){demoState.side=s;demoState.stage='q1';demoRender();}
+function demoAnswer(q,v){
+  demoState['a'+q]=v;
+  demoState.stage = q===1?'q2' : q===2?'q3' : 'unlock';
+  demoRender();
+}
+function demoBack(){
+  const order=['side','q1','q2','q3','unlock'];
+  const i=order.indexOf(demoState.stage);
+  if(i>0)demoState.stage=order[i-1];
+  demoRender();
+}
+
+function demoOptsHTML(qnum,cfg){
+  return cfg.opts.map(o=>`<button class="demo-opt" onclick="demoAnswer(${qnum},'${o[1]}')">${o[0]}<span class="arr">→</span></button>`).join('');
+}
+
+function demoRender(){
+  const body=document.getElementById('demo-body');
+  const st=demoState.stage;
+
+  if(st==='side'){
+    demoSetProgress('Paso 1 de 4',12);
+    body.innerHTML=`
+      <div class="demo-lockpill">🔒 Se desbloquea al unirte a la lista (gratis)</div>
+      <div class="demo-q-title">¿Cuál es tu lado?</div>
+      <p class="demo-q-help">Esto define qué perfiles te mostraremos.</p>
+      <div class="demo-sides">
+        <button class="demo-side" onclick="demoPickSide('idea')">
+          <div class="demo-side-ico">💡</div>
+          <h4>Tengo una idea</h4>
+          <p>Busco talento, equipo o cofundador para construirla.</p>
+        </button>
+        <button class="demo-side" onclick="demoPickSide('talento')">
+          <div class="demo-side-ico">🚀</div>
+          <h4>Tengo talento</h4>
+          <p>Quiero sumarme a un proyecto con potencial.</p>
+        </button>
+      </div>`;
+    return;
+  }
+
+  if(st==='q1'||st==='q2'||st==='q3'){
+    const cfg=demoQ[demoState.side][st];
+    const qnum=st==='q1'?1:st==='q2'?2:3;
+    demoSetProgress('Paso 2 de 4', qnum===1?33:qnum===2?45:58);
+    body.innerHTML=`
+      <div class="demo-q-eyebrow">${cfg.eyebrow}</div>
+      <div class="demo-q-title">${cfg.title}</div>
+      <div class="demo-opts" style="margin-top:1.4rem">${demoOptsHTML(qnum,cfg)}</div>
+      <button class="demo-back" onclick="demoBack()">← Atrás</button>`;
+    return;
+  }
+
+  if(st==='unlock'){
+    demoSetProgress('Paso 3 de 4',78);
+    body.innerHTML=`
+      <div class="demo-unlock">
+        <div class="demo-unlock-ico">🔒</div>
+        <h3>Desbloquea tus matches</h3>
+        <p>El match es exclusivo para la lista de espera. Regístrate y verás tus perfiles compatibles al instante.</p>
+        <div class="demo-err" id="demo-err"></div>
+        <input class="demo-input" id="demo-name" placeholder="Tu nombre" autocomplete="name">
+        <input class="demo-input" id="demo-email" placeholder="tu@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')demoRegister()">
+        <button class="demo-unlock-btn" id="demo-btn" onclick="demoRegister()">Registrarme y ver matches</button>
+        <p class="demo-note">Sin spam. Te avisamos cuando Nextwork esté listo.</p>
+      </div>`;
+    return;
+  }
+
+  if(st==='results'){
+    demoSetProgress('Paso 4 de 4',100);
+    const pool=demoState.side==='idea'?demoTalentos:demoProyectos;
+    const list=pool[demoState.a1]||demoTalentos.tech;
+    const headTitle=demoState.side==='idea'?'Estos perfiles complementan tu idea':'Estos proyectos encajan contigo';
+    const cards=list.map(m=>`
+      <div class="demo-match">
+        <div class="demo-match-av" style="background:${m.c}">${m.i}</div>
+        <div class="demo-match-info">
+          <div class="demo-match-name">${m.n}</div>
+          <div class="demo-match-role">${m.r}</div>
+          <div class="demo-match-tags">${m.t.map(x=>`<span>${x}</span>`).join('')}</div>
+        </div>
+        <div class="demo-match-pct"><b>${m.p}%</b><small>afinidad</small></div>
+      </div>`).join('');
+    body.innerHTML=`
+      <div class="demo-results-head">
+        <h3>${headTitle}</h3>
+        <p>Perfiles ficticios — así se verá tu match real al lanzar.</p>
+      </div>
+      ${cards}
+      <button class="demo-results-cta" onclick="document.getElementById('counter-section').scrollIntoView({behavior:'smooth'})">¡Ya estás en la lista! Ver mi posición →</button>`;
+    return;
+  }
+}
+
+async function demoRegister(){
+  const name=document.getElementById('demo-name').value.trim();
+  const email=document.getElementById('demo-email').value.trim();
+  const errEl=document.getElementById('demo-err');
+  const btn=document.getElementById('demo-btn');
+  errEl.textContent='';
+
+  if(Date.now()-_pageLoadTime<3000){errEl.textContent='Espera un momento e intenta de nuevo.';return;}
+  if(!name){errEl.textContent='Por favor ingresa tu nombre.';return;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){errEl.textContent='Por favor ingresa un email válido.';return;}
+  const v=validarEmail(email);
+  if(!v.ok){errEl.textContent=v.msg;return;}
+
+  btn.textContent='Registrando...';btn.disabled=true;
+
+  const {error}=await _sb.from('waitlist').insert({name,email});
+  if(error && !(error.message.includes('duplicate')||error.message.includes('unique'))){
+    errEl.textContent=error.message;btn.textContent='Registrarme y ver matches';btn.disabled=false;return;
+  }
+
+  /* Emails (no bloquean el resultado) */
+  const ladoTxt=demoState.side==='idea'?'💡 Tengo una idea':'🚀 Tengo talento';
+  try{await emailjs.send('service_kr7yft1','template_mec1fwa',{user_name:name,user_role:'🕐 Lista (demo): '+ladoTxt,user_location:'nextwork.cl',user_email:email,user_skills:'Demo de matching',email,name},'qCCiB5C-ktvGFIFyt');}catch(e){}
+  try{
+    let pos=1;try{const {data:c}=await _sb.rpc('get_waitlist_count');if(c)pos=c;}catch(e){}
+    await emailjs.send('service_kr7yft1','template_f2stsd7',{user_name:name,user_email:email,position:pos},'qCCiB5C-ktvGFIFyt');
+  }catch(e){}
+
+  /* Refrescar contador en vivo */
+  try{loadCount(false);}catch(e){}
+
+  demoState.stage='results';
+  demoRender();
+}
+
+/* Iniciar demo al cargar */
+window.addEventListener('load',demoRender);
 
 /* ── MODAL PRIVACIDAD ── */
 function openPrivacy(){
