@@ -1393,10 +1393,16 @@ async function joinWaitlist(){
 
   const {error}=await _sb.from('waitlist').insert({name,email});
   if(error){
-    const msg=error.message.includes('duplicate')||error.message.includes('unique')
-      ?'Este email ya está en la lista de espera 👍'
-      :error.message;
-    errEl.textContent=msg;errEl.style.display='block';
+    if(error.message.includes('duplicate')||error.message.includes('unique')){
+      /* Email ya registrado — tratar como usuario que vuelve */
+      let pos=1;try{const {data:c}=await _sb.rpc('get_waitlist_count');if(c)pos=c;}catch(e){}
+      document.getElementById('success-position').textContent='#'+pos;
+      document.getElementById('form-state').style.display='none';
+      document.getElementById('success-state').style.display='block';
+      localStorage.setItem('nw_waitlist','true');
+      return;
+    }
+    errEl.textContent=error.message;errEl.style.display='block';
     btn.innerHTML='Reservar mi lugar<svg class="ico" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';btn.disabled=false;
     return;
   }
@@ -1434,6 +1440,7 @@ async function joinWaitlist(){
   document.getElementById('success-position').textContent='#'+position;
   document.getElementById('form-state').style.display='none';
   document.getElementById('success-state').style.display='block';
+  localStorage.setItem('nw_waitlist','true');
   _currentCount=position;
   document.getElementById('real-count-num').textContent=position;
   document.getElementById('counter-section').style.display='block';
@@ -1635,8 +1642,12 @@ function toggleFaq(btn){
 
 /* Cargar contador al iniciar y polling cada 10s */
 window.addEventListener('load',()=>{
-  loadCount(false); // sin toast en la carga inicial
+  loadCount(false);
   setInterval(()=>loadCount(true),10000);
+  if(localStorage.getItem('nw_waitlist')==='true'){
+    document.getElementById('form-state').style.display='none';
+    document.getElementById('success-state').style.display='block';
+  }
 });
 </script>
 </body>
