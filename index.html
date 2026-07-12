@@ -1538,6 +1538,12 @@ function demoRender(){
   }
 
   if(st==='unlock'){
+    /* Si ya está registrado, saltar directo a resultados */
+    if(localStorage.getItem('nw_waitlist')==='true'){
+      demoState.stage='results';
+      demoRender();
+      return;
+    }
     demoSetProgress('Paso 3 de 4',78);
     body.innerHTML=`
       <div class="demo-unlock">
@@ -1595,17 +1601,21 @@ async function demoRegister(){
   btn.textContent='Registrando...';btn.disabled=true;
 
   const {error}=await _sb.from('waitlist').insert({name,email});
-  if(error && !(error.message.includes('duplicate')||error.message.includes('unique'))){
+  const isDuplicate=error&&(error.message.includes('duplicate')||error.message.includes('unique'));
+  if(error && !isDuplicate){
     errEl.textContent=error.message;btn.textContent='Registrarme y ver matches';btn.disabled=false;return;
   }
 
-  /* Emails (no bloquean el resultado) */
-  const ladoTxt=demoState.side==='idea'?'💡 Tengo una idea':'🚀 Tengo talento';
-  try{await emailjs.send('service_kr7yft1','template_mec1fwa',{user_name:name,user_role:'🕐 Lista (demo): '+ladoTxt,user_location:'nextwork.cl',user_email:email,user_skills:'Demo de matching',email,name},'qCCiB5C-ktvGFIFyt');}catch(e){}
-  try{
-    let pos=1;try{const {data:c}=await _sb.rpc('get_waitlist_count');if(c)pos=c;}catch(e){}
-    await emailjs.send('service_kr7yft1','template_f2stsd7',{user_name:name,user_email:email,position:pos},'qCCiB5C-ktvGFIFyt');
-  }catch(e){}
+  /* Emails solo si es registro nuevo, no si ya existía */
+  if(!isDuplicate){
+    const ladoTxt=demoState.side==='idea'?'💡 Tengo una idea':'🚀 Tengo talento';
+    try{await emailjs.send('service_kr7yft1','template_mec1fwa',{user_name:name,user_role:'🕐 Lista (demo): '+ladoTxt,user_location:'nextwork.cl',user_email:email,user_skills:'Demo de matching',email,name},'qCCiB5C-ktvGFIFyt');}catch(e){}
+    try{
+      let pos=1;try{const {data:c}=await _sb.rpc('get_waitlist_count');if(c)pos=c;}catch(e){}
+      await emailjs.send('service_kr7yft1','template_f2stsd7',{user_name:name,user_email:email,position:pos},'qCCiB5C-ktvGFIFyt');
+    }catch(e){}
+  }
+  localStorage.setItem('nw_waitlist','true');
 
   /* Refrescar contador en vivo */
   try{loadCount(false);}catch(e){}
